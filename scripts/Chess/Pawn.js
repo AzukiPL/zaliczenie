@@ -26,8 +26,7 @@ class Pawn extends PawnsParameters {
         // this.rangeRow = array of tile rows where this pawn can move relative to its current position
         // this.column = starting column position (y axis)
         // this.rangeCol = array of tile columns where this pawn can move relative to its current position
-        this.eventHandler = new PawnsEventHandler(this.chess, this.row, this.rangeRow, this.column, this.rangeCol);
-
+        this.eventHandler = new PawnsEventHandler(this.chess, this.color, this.row, this.rangeRow, this.column, this.rangeCol);
     }
 
     #createPawn() {
@@ -35,6 +34,7 @@ class Pawn extends PawnsParameters {
         let image = document.createElement('img');
         image.src = "images/"+this.color+"_Pawn.png";
         image.classList.add('game-Chess-pawn-images');
+        image.classList.add(this.color);
         image.alt = this.color+"_Pawn.png";
         image.id = this.tileID+" Pawn";
         destinationTile.appendChild(image);
