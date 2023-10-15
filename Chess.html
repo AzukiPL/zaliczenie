@@ -12,25 +12,6 @@
     <link rel="stylesheet" href="style/game.css">
     <link rel="stylesheet" href="style/footer.css">
 
-    <!-- INCLUDE SCRIPTS -->
-    <script lang="JavaScript" src="scripts/Chess/PawnsParameters.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/PawnsEventHandler.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/King.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/Queen.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/Bishop.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/Knight.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/Rook.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/Pawn.js" defer></script>
-    <script lang="JavaScript" src="scripts/Chess/ChessboardRendering.js" defer></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            console.log("DOM fully loaded and parsed");
-          
-            const chessRenderer = new ChessboardRendering();
-            chessRenderer.renderChessboard();
-          });
-    </script>
 </head>
 <body>
     <!-- MAIN BAR -->
@@ -57,4 +38,19 @@
         <p>Pozdrawiam, Maciej Wojtkiewicz</p>
     </div>
 
+    <!-- INCLUDE SCRIPTS -->
+    <script lang="JavaScript" src="scripts/Chess/PawnsParameters.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/PawnsEventHandler.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/King.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Queen.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Bishop.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Knight.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Rook.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Pawn.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/ChessboardRendering.js" defer></script>
+    <script>
+        const chessRenderer = new ChessboardRendering();
+        chessRenderer.renderChessboard();
+    </script>
 </body>
+</html> 
