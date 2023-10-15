@@ -1,0 +1,113 @@
+/* COMMON */
+#game-TicTac-screen, #game-Chess-screen {
+    aspect-ratio: 1 / 1;
+    height: 80%;
+    padding: 1%;
+}
+
+
+/* TIC_TAC_TOE */
+
+#game-TicTac-screen {
+  /* Content in common */
+  font-style: arial;
+} 
+
+/* Clear both floats in case some are still uncleared, just makin sure */
+#game-TicTac-screen::after {
+    clear: both;
+}
+
+.game-TicTacSquare {
+    width: 30%;
+    height: 30%;
+    border: 1px solid black;
+    background-color: white;
+    float: left;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    color: var(--font-color);
+    font-style: bold;
+    text-align: center;
+}
+/* In order to create Grid 3 by 3: each 3 divs removes float left, forcing next div to go to the next row. */
+.game-TicTacSquare:first-child + div+ div + div,
+.game-TicTacSquare:first-child + div+ div + div + div + div + div,
+.game-TicTacSquare:first-child + div+ div + div + div + div + div + div + div + div {
+  clear: left
+}
+.game-TicTacSquare:hover {
+    background-color: #eaeaea;
+}
+
+/* reset button container */
+#game-TicTac-reset {
+    width: 91%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+#game-TicTac-reset-button {
+    width: 50%;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    font-size: var(--font-size-big);
+}
+
+#game-TicTac-reset-button:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+/* CHESS */
+#game-Chess-screen {
+    /* Content in common */
+    font-style: arial;
+}
+
+/* To make sure float left is cleared */
+#game-Chess-screen::after {
+    clear: both;
+}
+
+/* Classes for each tile on the screen */
+.game-Chess-WhiteTile, .game-Chess-BlackTile {
+    width: 12%;
+    height: 12%;
+    display: flex;
+    float: left;
+}
+.game-Chess-WhiteTile {
+    background-color: white;
+}
+.game-Chess-BlackTile {
+    background-color: burlywood;
+}
+
+/* Each pawn is element of type img, they contains this claass */
+.game-Chess-pawn-images {
+    width: 100%;
+    height: 100%;
+}
+
+/* Each tile that selected pawn can move to, is supposed to highlight */
+.game-Chess-selected {
+    background-color: #009dff;
+}
+.game-Chess-selected > .game-Chess-pawn-images {
+    background-color: #ff0000;
+
+}
+
+.game-Chess-pawn-images:hover, .game-Chess-selected:hover {
+    cursor: pointer;
+    background-color: #51bcff;
+
+}
+
+.game-Chess-selected > .game-Chess-pawn-images:hover {
+    background-color: #ff7979;
+
+}

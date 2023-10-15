@@ -1,0 +1,25 @@
+/* Content of the main body */
+
+#content {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+#content-meme {    
+    margin: 5vh 0 5vh 0;
+    max-height: 50vw;
+    position: relative;
+}
+
+/* Banners on Sides */
+
+#content-banner-left, #content-banner-right {
+    display: flex;
+    float: left;
+    height: 100%;
+    width: 10vw;
+}
+#content-banner-left::after, #content-banner-right::after {
+    clear: both;
+}

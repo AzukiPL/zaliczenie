@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maciej Wojtkiewicz Zaliczenie</title>
+
+    <!-- INCLUDE STYLE -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/content.css">
+    <link rel="stylesheet" href="style/game.css">
+    <link rel="stylesheet" href="style/footer.css">
+
+    <!-- INCLUDE SCRIPTS -->
+    <script lang="JavaScript" src="scripts/Chess/PawnsParameters.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/PawnsEventHandler.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/King.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Queen.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Bishop.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Knight.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Rook.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/Pawn.js" defer></script>
+    <script lang="JavaScript" src="scripts/Chess/ChessboardRendering.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log("DOM fully loaded and parsed");
+          
+            const chessRenderer = new ChessboardRendering();
+            chessRenderer.renderChessboard();
+          });
+    </script>
+</head>
+<body>
+    <!-- MAIN BAR -->
+    <div id="menu-main-bar">
+        <div id="menu-home"><a href="index.html">Home</a></div>
+        <div id="menu-snake"><a href="Snake.html">Snake</a></div>
+        <div id="menu-tic-tac-toe"><a href="TicTacToe.html">Tic Tac Toe</a></div>
+        <div id="menu-chess" class="menu-selected"><a href="Chess.html">Refresh</a></div>
+    </div>
+
+    <!-- BODY CONTENT -->
+    <div id="content">
+        <div id="content-banner-left"></div>
+
+        <!-- GAME SCREEN -->
+        <div id="game-Chess-screen">
+            <!-- everything happening in there is made by ChessboardRendering, and other JS classes -->
+        </div>
+
+        <div id="content-banner-right"></div>
+    </div>
+    <!-- FOOTER -->
+    <div id="footer">
+        <p>Pozdrawiam, Maciej Wojtkiewicz</p>
+    </div>
+
+</body>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maciej Wojtkiewicz Zaliczenie</title>
+    
+    <!-- INCLUDE STYLE -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/content.css">
+    <link rel="stylesheet" href="style/game.css">
+    <link rel="stylesheet" href="style/footer.css">
+
+    <!-- INCLUDE SCRIPTS -->
+    <script lang="JavaScript" src="scripts/TicTacToe/ScoreController.js"></script>
+    <script lang="JavaScript" src="scripts/TicTacToe/InputController.js"></script>
+    <script> const inputControl = new InputController(); </script>
+
+</head>
+<body>
+    <!-- MAIN BAR -->
+    <div id="menu-main-bar">
+        <div id="menu-home"><a href="index.html">Home</a></div>
+        <div id="menu-snake"><a href="Snake.html">Snake</a></div>
+        <div id="menu-tic-tac-toe" class="menu-selected"><a href="TicTacToe.html">Refresh</a></div>
+        <div id="menu-chess"><a href="Chess.html">Chess</a></div>
+    </div>
+
+    <!-- BODY CONTENT -->
+    <div id="content">
+        <div id="content-banner-left">Player 1:<br><div id="game-player-1-score">0</div></div>
+
+        <!-- GAME SCREEN -->
+        <div id="game-TicTac-screen">
+            <div class="game-TicTacSquare" id="1" onclick="inputControl.updateTile(1)"></div>
+            <div class="game-TicTacSquare" id="2" onclick="inputControl.updateTile(2)"></div>
+            <div class="game-TicTacSquare" id="3" onclick="inputControl.updateTile(3)"></div>
+            <div class="game-TicTacSquare" id="4" onclick="inputControl.updateTile(4)"></div>
+            <div class="game-TicTacSquare" id="5" onclick="inputControl.updateTile(5)"></div>
+            <div class="game-TicTacSquare" id="6" onclick="inputControl.updateTile(6)"></div>
+            <div class="game-TicTacSquare" id="7" onclick="inputControl.updateTile(7)"></div>
+            <div class="game-TicTacSquare" id="8" onclick="inputControl.updateTile(8)"></div>
+            <div class="game-TicTacSquare" id="9" onclick="inputControl.updateTile(9)"></div>
+            <div id="game-TicTac-reset"> <input id="game-TicTac-reset-button" type="button" value="Reset" onclick="inputControl.reset()"></div>
+        </div>
+        
+        <div id="content-banner-right">Player 2:<br><div id="game-player-2-score">0</div></div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <p>Pozdrawiam, Maciej Wojtkiewicz</p>
+    </div>
+</body>
+</html>
