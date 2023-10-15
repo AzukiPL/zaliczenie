@@ -27,18 +27,7 @@
         <div id="content-banner-left">Player 1:<br><div id="game-player-1-score">0</div></div>
 
         <!-- GAME SCREEN -->
-        <div id="game-TicTac-screen">
-            <div class="game-TicTacSquare" id="1" onclick="inputControl.updateTile(1)"></div>
-            <div class="game-TicTacSquare" id="2" onclick="inputControl.updateTile(2)"></div>
-            <div class="game-TicTacSquare" id="3" onclick="inputControl.updateTile(3)"></div>
-            <div class="game-TicTacSquare" id="4" onclick="inputControl.updateTile(4)"></div>
-            <div class="game-TicTacSquare" id="5" onclick="inputControl.updateTile(5)"></div>
-            <div class="game-TicTacSquare" id="6" onclick="inputControl.updateTile(6)"></div>
-            <div class="game-TicTacSquare" id="7" onclick="inputControl.updateTile(7)"></div>
-            <div class="game-TicTacSquare" id="8" onclick="inputControl.updateTile(8)"></div>
-            <div class="game-TicTacSquare" id="9" onclick="inputControl.updateTile(9)"></div>
-            <div id="game-TicTac-reset"> <input id="game-TicTac-reset-button" type="button" value="Reset" onclick="inputControl.reset()"></div>
-        </div>
+        <div id="game-TicTac-screen"></div>
         
         <div id="content-banner-right">Player 2:<br><div id="game-player-2-score">0</div></div>
     </div>
@@ -50,6 +39,7 @@
     <!-- INCLUDE SCRIPTS -->
     <script lang="JavaScript" src="scripts/TicTacToe/ScoreController.js"></script>
     <script lang="JavaScript" src="scripts/TicTacToe/InputController.js"></script>
-    <script> const inputControl = new InputController(); </script>
+    <script lang="JavaScript" src="scripts/TicTacToe/TileRenderer.js"></script>
+    <script lang="JavaScript" src="scripts/TicTacToe/index.js"></script>
 </body>
 </html>
