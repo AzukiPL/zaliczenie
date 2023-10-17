@@ -9,33 +9,17 @@ class ChessboardRendering {
         this.bishopPawn = [4];
         this.queenPawn = [2];
         this.kingPawn = [2];
+
+        this.chessTiles = [document][document];
     }
+    // creates chessboard tiles from left to right, and give its correct class
+    // give each tile its own id based on their position in row / column || x axis / y axis
+    // on the end of the row switch color again so next row begins with same color as prievous ended
 
-    renderChessboard() {
-        const gameScreen = document.getElementById("game-Chess-screen");
-        let isWhite = true;
+    render() {
+        // Rneder the Chessboard
+        this.renderChessboard();
 
-        for(let row=0; row<8; row++) {
-            for(let col=0; col<8; col++) {
-
-                let column = col+1;
-                // creates chessboard tiles from left to right, and give its correct class
-                let tileDiv = document.createElement("div");
-                if(isWhite) tileDiv.classList.add("game-Chess-WhiteTile");
-                else tileDiv.classList.add("game-Chess-BlackTile");
-
-                // give each tile its own id based on their position in row / column || x axis / y axis
-                tileDiv.id = String(parseInt(row+1)+String(column));
-                gameScreen.appendChild(tileDiv);
-                // Each iteration switch color so next tile is opposite class
-                if(isWhite) isWhite = false;
-                else        isWhite = true;
-            }
-            // on the end of the row switch color again so next row begins with same color as prievous ended
-            // this creates the chessboard tile effect
-            if(isWhite) isWhite = false;
-            else        isWhite = true;
-        }
         // Render all pawns on the chessboard
         this.#renderPawn();
         this.#renderRook();
@@ -43,6 +27,27 @@ class ChessboardRendering {
         this.#renderBishop();
         this.#renderQueen();
         this.#renderKing();
+    }
+
+    renderChessboard() {
+        const gameScreen = document.getElementById("game-Chess-screen");
+        let isWhite = true;
+        for(let row=0; row<8; row++) {
+            for(let col=0; col<8; col++) {
+
+                let column = col+1;
+                let tileDiv = document.createElement("div");
+                tileDiv.classList.add("game-Chess-Tile");
+                if(isWhite == true) tileDiv.classList.add("game-white");
+                if(isWhite == false) tileDiv.classList.add("game-burly");
+                tileDiv.id = String(parseInt(row+1)+String(column));
+                gameScreen.appendChild(tileDiv);
+                if(isWhite) isWhite = false;
+                else        isWhite = true;
+            }
+            if(isWhite) isWhite = false;
+            else        isWhite = true;
+        }
     }
 
     // in theory i could use loops for this, but i think this approach is a bit easier to understand
@@ -57,7 +62,7 @@ class ChessboardRendering {
         this.pawn[4] = new Pawn(2,5,"black");
         this.pawn[5] = new Pawn(2,6,"black");
         this.pawn[6] = new Pawn(2,7,"black");
-        this.pawn[7] = new Pawn(2,8,"black");
+        this.pawn[7] = new Pawn(2,8,"white");
 
         this.pawn[8]  = new Pawn(7,1,"white");
         this.pawn[9]  = new Pawn(7,2,"white");

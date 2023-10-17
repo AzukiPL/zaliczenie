@@ -3,8 +3,6 @@ class Pawn extends PawnsParameters {
     constructor (row, column, color) {
         super(row, column, color);
         this.#createPawn();
-        this.chess = document.getElementById(this.tileID+" Pawn");
-
 
         // first element of rangeRow (x axis) is connected to its corresponding rangeCol (y axis)
         if(color == "black") {
@@ -26,7 +24,9 @@ class Pawn extends PawnsParameters {
         // this.rangeRow = array of tile rows where this pawn can move relative to its current position
         // this.column = starting column position (y axis)
         // this.rangeCol = array of tile columns where this pawn can move relative to its current position
-        this.eventHandler = new PawnsEventHandler(this.chess, this.color, this.row, this.rangeRow, this.column, this.rangeCol);
+        // this.eventHandler = new PawnsEventHandler(this.chess, this.color, this.row, this.rangeRow, this.column, this.rangeCol);
+        this.onChessSelect();
+
     }
 
     #createPawn() {
@@ -37,6 +37,7 @@ class Pawn extends PawnsParameters {
         image.classList.add(this.color);
         image.alt = this.color+"_Pawn.png";
         image.id = this.tileID+" Pawn";
+        image.customObject = this;
         destinationTile.appendChild(image);
     }
 

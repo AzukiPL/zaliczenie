@@ -73,17 +73,17 @@
 }
 
 /* Classes for each tile on the screen */
-.game-Chess-WhiteTile, .game-Chess-BlackTile {
+.game-Chess-Tile{
     width: 12%;
     height: 12%;
     display: flex;
     float: left;
 }
-.game-Chess-WhiteTile {
-    background-color: white;
-}
-.game-Chess-BlackTile {
+.game-burly {
     background-color: burlywood;
+}
+.game-white {
+    background-color: white;
 }
 
 /* Each pawn is element of type img, they contains this claass */
@@ -95,10 +95,6 @@
 /* Each tile that selected pawn can move to, is supposed to highlight */
 .game-Chess-selected {
     background-color: #009dff;
-}
-.game-Chess-selected > .game-Chess-pawn-images {
-    background-color: #ff0000;
-
 }
 
 .game-Chess-pawn-images:hover, .game-Chess-selected:hover {
