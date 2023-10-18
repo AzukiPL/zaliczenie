@@ -10,7 +10,7 @@ class ChessboardRendering {
         this.queenPawn = [2];
         this.kingPawn = [2];
 
-        this.chessTiles = [document][document];
+
     }
     // creates chessboard tiles from left to right, and give its correct class
     // give each tile its own id based on their position in row / column || x axis / y axis

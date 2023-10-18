@@ -93,7 +93,7 @@
 }
 
 /* Each tile that selected pawn can move to, is supposed to highlight */
-.game-Chess-selected {
+.game-Chess-selected, .game-current-selected {
     background-color: #009dff;
 }
 

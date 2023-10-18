@@ -19,12 +19,6 @@ class Pawn extends PawnsParameters {
             this.rangeCol[0] = 0;
             this.rangeCol[1] = 0;
         }
-        // this.chess is current chess object.
-        // this.row = starting row position (x axis)
-        // this.rangeRow = array of tile rows where this pawn can move relative to its current position
-        // this.column = starting column position (y axis)
-        // this.rangeCol = array of tile columns where this pawn can move relative to its current position
-        // this.eventHandler = new PawnsEventHandler(this.chess, this.color, this.row, this.rangeRow, this.column, this.rangeCol);
         this.onChessSelect();
 
     }
@@ -38,6 +32,10 @@ class Pawn extends PawnsParameters {
         image.alt = this.color+"_Pawn.png";
         image.id = this.tileID+" Pawn";
         image.customObject = this;
+        if(this.color == "white")
+        image.dataset.pawnData = "pawn";
+        else
+        image.dataset.pawnData = "pawnB";
         destinationTile.appendChild(image);
     }
 
