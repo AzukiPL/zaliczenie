@@ -25,15 +25,15 @@ class Pawn extends PawnsParameters {
     }
 
     #addRange() {
-        for(let i=0; i<2; i++) {
+        for(let i=0; i<1; i++) {
             this.range[i] = [];
-            for(let j=0; j<2; j++) {
+            for(let j=0; j<4; j++) {
                 if(this.color == "white") {
-                    if(j%2 == 0)        this.range[i][j] = -i-1;
+                    if(j%2 == 0)        this.range[i][j] = -j/2-1;
                     else if(j%2 != 0)   this.range[i][j] =  0;
                 }
                 else if(this.color == "black") {
-                    if(j%2 == 0)        this.range[i][j] =  i+1;
+                    if(j%2 == 0)        this.range[i][j] =  j/2+1;
                     else if(j%2 != 0)   this.range[i][j] =  0;
                 }
             }

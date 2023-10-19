@@ -17,7 +17,6 @@ class TileRenderer {
         }
     }
     renderReset() {
-       // <!-- <div id="game-TicTac-reset"> <input id="game-TicTac-reset-button" type="button" value="Reset" onclick="inputControl.reset()"></div> -->
         let div = document.createElement("div");
         div.id = "game-TicTac-reset";
 

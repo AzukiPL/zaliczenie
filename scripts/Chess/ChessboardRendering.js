@@ -62,7 +62,7 @@ class ChessboardRendering {
         this.pawn[4] = new Pawn(2,5,"black");
         this.pawn[5] = new Pawn(2,6,"black");
         this.pawn[6] = new Pawn(2,7,"black");
-        this.pawn[7] = new Pawn(2,8,"white");
+        this.pawn[7] = new Pawn(2,8,"black");
 
         this.pawn[8]  = new Pawn(7,1,"white");
         this.pawn[9]  = new Pawn(7,2,"white");
