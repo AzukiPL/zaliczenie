@@ -3,38 +3,7 @@ class Pawn extends PawnsParameters {
     constructor (row, column, color) {
         super(row, column, color);
         this.#createPawn();
-
-        for(let i=0; i<2; i++) {
-            this.range[i] = [];
-            for(let j=0; j<2; j++) {
-                if(color == "white") {
-                    if(j%2 == 0)        this.range[i][j] = -i-1;
-                    else if(j%2 != 0)   this.range[i][j] =  0;
-                }
-                else if(color == "black") {
-                    if(j%2 == 0)        this.range[i][j] =  i+1;
-                    else if(j%2 != 0)   this.range[i][j] =  0;
-                }
-            }
-        }
-    
-
-
-        // first element of rangeRow (x axis) is connected to its corresponding rangeCol (y axis)
-        // if(color == "black") {
-        //     this.rangeRow[0] = 1;
-        //     this.rangeRow[1] = 2;
-
-        //     this.rangeCol[0] = 0;
-        //     this.rangeCol[1] = 0;
-        // }
-        // if(color == "white") {
-        //     this.rangeRow[0] = -1;
-        //     this.rangeRow[1] = -2;
-            
-        //     this.rangeCol[0] = 0;
-        //     this.rangeCol[1] = 0;
-        // }
+        this.#addRange();
         this.onChessSelect();
 
     }
@@ -53,6 +22,22 @@ class Pawn extends PawnsParameters {
         else
         image.dataset.pawnData = "pawnB";
         destinationTile.appendChild(image);
+    }
+
+    #addRange() {
+        for(let i=0; i<2; i++) {
+            this.range[i] = [];
+            for(let j=0; j<2; j++) {
+                if(this.color == "white") {
+                    if(j%2 == 0)        this.range[i][j] = -i-1;
+                    else if(j%2 != 0)   this.range[i][j] =  0;
+                }
+                else if(this.color == "black") {
+                    if(j%2 == 0)        this.range[i][j] =  i+1;
+                    else if(j%2 != 0)   this.range[i][j] =  0;
+                }
+            }
+        }
     }
 
 }

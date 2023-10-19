@@ -21,7 +21,6 @@ class PawnsParameters {
             this.refreshTiles();
             loop1: for(let i=0; i<this.range.length;i++) {
                 loop2: for(let j=0; j<this.range[i].length; j++) {
-                    console.log(String(parseInt(this.column+this.range[i][j+1])));
                     if(document.getElementById(String(parseInt(this.row+this.range[i][j]))+String(parseInt(this.column+this.range[i][j+1]))) != null)
                     {
                         const tile = document.getElementById(String(parseInt(this.row+this.range[i][j]))+String(parseInt(this.column+this.range[i][j+1])));
