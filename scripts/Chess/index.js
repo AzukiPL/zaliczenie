@@ -5,6 +5,5 @@ function main() {
     const tileListener = new TileListener();
     tileListener.addListeners();
 
-    new HighlightToggle();
 }
 main();

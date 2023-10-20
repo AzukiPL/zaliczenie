@@ -29,6 +29,11 @@ class TileListener {
         for(let i=tiles.length-1; 0<=i; i--) {
             tiles[i].classList.remove("game-Chess-selected");
         }
+
+        const redTiles = document.querySelectorAll(".game-current-selected");
+        for(let i=0; i<redTiles.length; i++) {
+            redTiles[i].classList.remove("game-current-selected");
+        }
     }
 
     #chessMove(iterator = document) {

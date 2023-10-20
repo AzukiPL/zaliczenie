@@ -96,13 +96,18 @@
 
 /* Each tile that selected pawn can move to, is supposed to highlight */
 .game-Chess-selected, .game-current-selected {
-    background-color: #009dff;
+    background-image: url("../images/selected.png");
+    background-position: center;
+}
+.game-Chess-selected.game-current-selected {
+    background-image: url("../images/selected.png");
+    background-position: center;
+    background-color: rgb(255, 58, 58);
 }
 
 .game-Chess-pawn-images:hover, .game-Chess-selected:hover {
     cursor: pointer;
     background-color: #51bcff;
-
 }
 
 .game-Chess-selected > .game-Chess-pawn-images:hover {

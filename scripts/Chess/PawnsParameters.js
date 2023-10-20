@@ -25,9 +25,13 @@ class PawnsParameters {
     } 
     refreshTiles() {
         const tiles = document.getElementsByClassName("game-Chess-selected");
-
         for(let i=tiles.length-1; 0<=i; i--) {
             tiles[i].classList.remove("game-Chess-selected");
+        }
+        
+        const redTiles = document.querySelectorAll(".game-current-selected");
+        for(let i=0; i<redTiles.length; i++) {
+            redTiles[i].classList.remove("game-current-selected");
         }
     }
 
@@ -44,6 +48,7 @@ class PawnsParameters {
                         if(!child.classList.contains(this.color))   
                         {            
                             tile.classList.add("game-Chess-selected");
+                            tile.classList.add("game-current-selected");
                             break loop2;
                         }
                         else if(child.classList.contains(this.color)) {
