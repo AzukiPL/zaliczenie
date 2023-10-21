@@ -38,6 +38,7 @@ class PawnsParameters {
 
     // highlights tiles where last selected pawn can move to
     #highlightMoveTiles() {
+        if(!TileListener.turnCtrl.canChangeTurn(this.color)) return;
         loop1: for(let i=0; i<this.range.length;i++) {
             loop2: for(let j=0; j<this.range[i].length; j++) {
                 if(document.getElementById(String(parseInt(this.row+this.range[i][j]))+String(parseInt(this.column+this.range[i][j+1]))) != null)

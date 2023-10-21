@@ -1,4 +1,5 @@
 class TileListener {
+    static turnCtrl = new TurnController();
     constructor () {
         this.lastSelected = null;
     }
@@ -38,10 +39,14 @@ class TileListener {
 
     #chessMove(iterator = document) {
         if(iterator.classList.contains("game-Chess-selected")) {
-            iterator.appendChild(this.lastSelected);
-            this.#refreshTiles();
-            this.lastSelected.customObject.row = parseInt(iterator.id / 10);
-            this.lastSelected.customObject.column = parseInt(iterator.id % 10);
+            if(TileListener.turnCtrl.canChangeTurn(this.lastSelected.customObject.color)) {
+                iterator.appendChild(this.lastSelected);
+                this.#refreshTiles();
+                this.lastSelected.customObject.row = parseInt(iterator.id / 10);
+                this.lastSelected.customObject.column = parseInt(iterator.id % 10);
+                TileListener.turnCtrl.turnOver(this.lastSelected.customObject.color);
+            }
+
         }
     }
 }
