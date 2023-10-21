@@ -1,5 +1,4 @@
 class Pawn extends PawnsParameters {
-   
     constructor (row, column, color) {
         super(row, column, color);
         this.#createPawn();
@@ -28,15 +27,23 @@ class Pawn extends PawnsParameters {
         for(let i=0; i<1; i++) {
             this.range[i] = [];
             for(let j=0; j<4; j++) {
-                // if(this.color == "white") {
+                if(this.color == "white") {
                     if(j%2 == 0)        this.range[i][j] = -j/2-1;
                     else if(j%2 != 0)   this.range[i][j] =  0;
-                // }
-                // else if(this.color == "black") {
-                    // if(j%2 == 0)        this.range[i][j] =  j/2+1;
-                    // else if(j%2 != 0)   this.range[i][j] =  0;
-                // }
+                }
+                else if(this.color == "black") {
+                    if(j%2 == 0)        this.range[i][j] =  j/2+1;
+                    else if(j%2 != 0)   this.range[i][j] =  0;
+                }
             }
+        }
+    }
+
+    promotion() {
+        if(this.row == 1 || this.row == 8) {
+            const tile = document.getElementById(String(this.row)+String(this.column));
+            tile.innerHTML = "";
+            const object = new Queen(this.row, this.column, this.color);
         }
     }
 

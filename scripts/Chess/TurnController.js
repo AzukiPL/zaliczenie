@@ -12,10 +12,10 @@ class TurnController {
         if(color == this.turn) {
             if(color == "white") this.turn = "black";
             else if(color == "black") this.turn = "white";
-            this.#flipTable()
         }
     }
 
+    // removed because it makes me sick .<.
     #flipTable() {
         const pawns = document.querySelectorAll(".game-Chess-pawn-images");
         pawns.forEach(pawn => {

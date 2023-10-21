@@ -46,7 +46,8 @@ class PawnsParameters {
                     const tile = document.getElementById(String(parseInt(this.row+this.range[i][j]))+String(parseInt(this.column+this.range[i][j+1])));
                     const child = tile.firstElementChild;
                     if(child != null) {  
-                        if(!child.classList.contains(this.color))   
+                        this.#highlightIfPawn();
+                        if(!child.classList.contains(this.color) && !(this.object.customObject instanceof Pawn))   
                         {            
                             tile.classList.add("game-Chess-selected");
                             tile.classList.add("game-current-selected");
@@ -55,11 +56,42 @@ class PawnsParameters {
                         else if(child.classList.contains(this.color)) {
                             break loop2;
                         }
-                        else break;
+                        else break loop2;
                     }
                     else tile.classList.add("game-Chess-selected");
                 }
                 j++;
+            }
+        }
+    }
+    
+    #highlightIfPawn() {
+        if(this.object.customObject instanceof Pawn) {
+            let enemyTileR = document;
+            let enemyTileL = document;
+            if(this.color == "white") {
+                enemyTileR = document.getElementById(String(this.row-1)+String(this.column+1));
+                enemyTileL = document.getElementById(String(this.row-1)+String(this.column-1));
+
+            }
+            else {
+                enemyTileR = document.getElementById(String(this.row+1)+String(this.column+1));
+                enemyTileL = document.getElementById(String(this.row+1)+String(this.column-1));
+            }
+            if(enemyTileR.firstElementChild != null) {
+                if(!enemyTileR.firstElementChild.classList.contains(this.color))   
+                {            
+                    enemyTileR.classList.add("game-Chess-selected");
+                    enemyTileR.classList.add("game-current-selected");
+                }
+            }
+
+            if(enemyTileL.firstElementChild != null) {
+                if(!enemyTileL.firstElementChild.classList.contains(this.color))   
+                {            
+                    enemyTileL.classList.add("game-Chess-selected");
+                    enemyTileL.classList.add("game-current-selected");
+                }
             }
         }
     }
