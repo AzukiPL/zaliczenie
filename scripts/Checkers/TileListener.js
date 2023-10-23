@@ -1,10 +1,7 @@
 class TileListener {
-    static tileListen = new this;
     static turnCtrl = new TurnController();
     constructor () {
         this.lastSelected = null;
-        this.king = document.querySelectorAll(".king");
-
     }
     addListeners() {
         const tiles = document.getElementsByClassName("game-Chess-Tile");
@@ -38,23 +35,23 @@ class TileListener {
         for(let i=0; i<redTiles.length; i++) {
             redTiles[i].classList.remove("game-current-selected");
         }
-
     }
 
     #chessMove(iterator = document) {
         if(iterator.classList.contains("game-Chess-selected")) {
             if(TileListener.turnCtrl.canChangeTurn(this.lastSelected.customObject.color)) {
                 iterator.appendChild(this.lastSelected);
+                const jump = document.querySelectorAll(".game-current-selected");
+                for (const enemy of jump) {
+                    if(enemy != null) enemy.innerHTML = " ";
+                }
                 this.refreshTiles();
                 this.lastSelected.customObject.row = parseInt(iterator.id / 10);
                 this.lastSelected.customObject.column = parseInt(iterator.id % 10);
                 TileListener.turnCtrl.turnOver(this.lastSelected.customObject.color);
-                if(this.lastSelected.customObject instanceof Pawn) this.lastSelected.customObject.range[0][2] = 0;
-                if(this.lastSelected.customObject instanceof Pawn) this.lastSelected.customObject.promotion();
-                for (const iterator of this.king) {
-                    iterator.customObject.highlightIfDanger();
-                }
+                if(this.lastSelected.customObject instanceof Checker) this.lastSelected.customObject.promotion();
             }
+
         }
     }
 }

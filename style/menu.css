@@ -14,7 +14,7 @@
     clear: both;
 }
 /* Each div has separate ID, I know I should use class in this case, i dont remember why i used ID tho */
-#menu-home, #menu-snake, #menu-tic-tac-toe, #menu-chess {
+#menu-home, #menu-Checkers, #menu-tic-tac-toe, #menu-chess {
     width: 15vw;
     height: 100%;
     display: grid;
@@ -27,7 +27,7 @@
     color: var(--font-color);
     font-size: var(--font-size-big);
 }
-#menu-home:hover, #menu-snake:hover, #menu-tic-tac-toe:hover, #menu-chess:hover {
+#menu-home:hover, #menu-Checkers:hover, #menu-tic-tac-toe:hover, #menu-chess:hover {
     background-color: var(--hover-color);
 }
 #menu-main-bar .menu-selected {

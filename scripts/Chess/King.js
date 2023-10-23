@@ -14,13 +14,11 @@ class King extends PawnsParameters {
         image.src = "images/"+this.color+"_KingPawn.png";
         image.classList.add('game-Chess-pawn-images');
         image.classList.add(this.color);
+        image.classList.add("king");
         image.alt = this.color+"_KingPawn.png";
         image.id = this.tileID+" Pawn";
         image.customObject = this;
-        if(this.color == "white")
         image.dataset.pawnData = "kingPawn";
-        else
-        image.dataset.pawnData = "kingPawnB";
         destinationTile.appendChild(image);
     }
 
@@ -66,4 +64,34 @@ class King extends PawnsParameters {
             }
         }
     }
+    highlightIfDanger() {
+        if(this.checkIfDanger(null)) {
+            this.#highlight();
+        }        
+    }
+    #highlight() {
+        const tile = document.getElementById(String(this.row)+String(this.column));
+        tile.classList.add("game-current-selected");    
+    }
+    
+    checkIfDanger(tile) {
+        console.log(tile);
+        const pawns = document.querySelectorAll(".game-Chess-pawn-images");
+        for (const pawn of pawns) {
+            const pObject = pawn.customObject;
+            for(let i=0; i<pObject.range.length; i++) {
+                loop: for(let j=0; j<pObject.range[i].length; j++) {
+                    const destinationTile = document.getElementById(String(parseInt(pObject.row+pObject.range[i][j]))+String(parseInt(pObject.column+pObject.range[i][j+1])));
+                    if(pObject.color == this.color || pObject == this) continue loop;
+                    if(destinationTile == null) continue loop;
+                    console.log(destinationTile == document.getElementById(String(this.row)+String(this.column)) || destinationTile == tile)
+                    if(destinationTile == document.getElementById(String(this.row)+String(this.column)) || destinationTile == tile) return true;
+                    j++;
+                }
+            }
+        }
+        return false;
+    }
+
+   
 }

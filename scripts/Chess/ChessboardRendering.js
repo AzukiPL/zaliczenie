@@ -15,26 +15,15 @@ class ChessboardRendering {
     // creates chessboard tiles from left to right, and give its correct class
     // give each tile its own id based on their position in row / column || x axis / y axis
     // on the end of the row switch color again so next row begins with same color as prievous ended
-
-    render() {
-        // Rneder the Chessboard
-        this.renderChessboard();
-
-        // Render all pawns on the chessboard
-        this.#renderPawn();
-        this.#renderRook();
-        this.#renderKnight();
-        this.#renderBishop();
-        this.#renderQueen();
-        this.#renderKing();
-    }
-
+    
+    
+    
     renderChessboard() {
         const gameScreen = document.getElementById("game-Chess-screen");
         let isWhite = true;
         for(let row=0; row<8; row++) {
             for(let col=0; col<8; col++) {
-
+                
                 let column = col+1;
                 let tileDiv = document.createElement("div");
                 tileDiv.classList.add("game-Chess-Tile");
@@ -49,7 +38,21 @@ class ChessboardRendering {
             else        isWhite = true;
         }
     }
-
+    
+    // ------------------------------------------ CHESS RENDERERS --------------------------------
+    
+    render() {
+        // Rneder the Chessboard
+        this.renderChessboard();
+        
+        // Render all pawns on the chessboard
+        this.#renderPawn();
+        this.#renderRook();
+        this.#renderKnight();
+        this.#renderBishop();
+        this.#renderQueen();
+        this.#renderKing();
+    }
     // in theory i could use loops for this, but i think this approach is a bit easier to understand
     #renderPawn() {
         // argument 1 = row (x axis)
@@ -63,7 +66,7 @@ class ChessboardRendering {
         this.pawn[5] = new Pawn(2,6,"black");
         this.pawn[6] = new Pawn(2,7,"black");
         this.pawn[7] = new Pawn(2,8,"black");
-
+        
         this.pawn[8]  = new Pawn(7,1,"white");
         this.pawn[9]  = new Pawn(7,2,"white");
         this.pawn[10] = new Pawn(7,3,"white");
@@ -73,25 +76,25 @@ class ChessboardRendering {
         this.pawn[14] = new Pawn(7,7,"white");
         this.pawn[15] = new Pawn(7,8,"white");
     }
-
+    
     #renderRook() {
         // argument 1 = row (x axis)
         // argument 2 = col (y axis)
         // argument 3 = color (whether chess should be white or black)
         this.rookPawn[0] = new Rook(1,1,"black");
         this.rookPawn[1] = new Rook(1,8,"black");
-
+        
         this.rookPawn[2] = new Rook(8,1,"white");
         this.rookPawn[3] = new Rook(8,8,"white");
     }
- 
+    
     #renderKnight() {
         // argument 1 = row (x axis)
         // argument 2 = col (y axis)
         // argument 3 = color (whether chess should be white or black)
         this.knightPawn[0] = new Knight(1,2,"black");
         this.knightPawn[1] = new Knight(1,7,"black");
-
+        
         this.knightPawn[2] = new Knight(8,2,"white");
         this.knightPawn[3] = new Knight(8,7,"white");
     }
@@ -102,11 +105,11 @@ class ChessboardRendering {
         // argument 3 = color (whether chess should be white or black)
         this.bishopPawn[0] = new Bishop(1,3,"black");
         this.bishopPawn[1] = new Bishop(1,6,"black");
-
+        
         this.bishopPawn[2] = new Bishop(8,3,"white");
         this.bishopPawn[3] = new Bishop(8,6,"white");
     }
-
+    
     #renderQueen() {
         // argument 1 = row (x axis)
         // argument 2 = col (y axis)
@@ -121,4 +124,34 @@ class ChessboardRendering {
         this.kingPawn[1] = new King(1,5,"black");
         this.kingPawn[2] = new King(8,5,"white");
     }
-}
+
+    // ------------------------------------------ CHECKERS RENDERERS --------------------------------
+    renderCheckers() {
+        this.renderChessboard();
+        new Checker(1,2,"black");
+        new Checker(1,4,"black");
+        new Checker(1,6,"black");
+        new Checker(1,8,"black");
+        new Checker(2,1,"black");
+        new Checker(2,3,"black");
+        new Checker(2,5,"black");
+        new Checker(2,7,"black");
+        new Checker(3,2,"black");
+        new Checker(3,4,"black");
+        new Checker(3,6,"black");
+        new Checker(3,8,"black");
+
+        new Checker(6,1,"white");
+        new Checker(6,3,"white");
+        new Checker(6,5,"white");
+        new Checker(6,7,"white");
+        new Checker(7,2,"white");
+        new Checker(7,4,"white");
+        new Checker(7,6,"white");
+        new Checker(7,8,"white");
+        new Checker(8,1,"white");
+        new Checker(8,3,"white");
+        new Checker(8,5,"white");
+        new Checker(8,7,"white");
+    }
+}   

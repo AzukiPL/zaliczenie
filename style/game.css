@@ -99,7 +99,7 @@
     background-image: url("../images/selected.png");
     background-position: center;
 }
-.game-Chess-selected.game-current-selected {
+.game-Chess-selected.game-current-selected, .game-current-selected {
     background-image: url("../images/selected.png");
     background-position: center;
     background-color: rgb(255, 58, 58);
