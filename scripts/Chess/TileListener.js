@@ -38,7 +38,6 @@ class TileListener {
         for(let i=0; i<redTiles.length; i++) {
             redTiles[i].classList.remove("game-current-selected");
         }
-
     }
 
     #chessMove(iterator = document) {
@@ -52,7 +51,7 @@ class TileListener {
                 if(this.lastSelected.customObject instanceof Pawn) this.lastSelected.customObject.range[0][2] = 0;
                 if(this.lastSelected.customObject instanceof Pawn) this.lastSelected.customObject.promotion();
                 for (const iterator of this.king) {
-                    iterator.customObject.highlightIfDanger();
+                    iterator.customObject.checkIfDanger(iterator.parentElement);
                 }
             }
         }

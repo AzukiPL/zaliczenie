@@ -65,9 +65,10 @@ class King extends PawnsParameters {
         }
     }
     highlightIfDanger() {
-        if(this.checkIfDanger(null)) {
+        const thisTile = document.getElementById(String(this.row)+String(this.column));
+        if(this.checkIfDanger(thisTile)) {
             this.#highlight();
-        }        
+        }     
     }
     #highlight() {
         const tile = document.getElementById(String(this.row)+String(this.column));
@@ -75,23 +76,29 @@ class King extends PawnsParameters {
     }
     
     checkIfDanger(tile) {
-        console.log(tile);
         const pawns = document.querySelectorAll(".game-Chess-pawn-images");
-        for (const pawn of pawns) {
+
+        loop1: for(const pawn of pawns) {
             const pObject = pawn.customObject;
-            for(let i=0; i<pObject.range.length; i++) {
-                loop: for(let j=0; j<pObject.range[i].length; j++) {
-                    const destinationTile = document.getElementById(String(parseInt(pObject.row+pObject.range[i][j]))+String(parseInt(pObject.column+pObject.range[i][j+1])));
-                    if(pObject.color == this.color || pObject == this) continue loop;
-                    if(destinationTile == null) continue loop;
-                    console.log(destinationTile == document.getElementById(String(this.row)+String(this.column)) || destinationTile == tile)
-                    if(destinationTile == document.getElementById(String(this.row)+String(this.column)) || destinationTile == tile) return true;
+            loop2: for(let i=0; i<pObject.range.length; i++) {
+                loop3: for(let j=0; j<pObject.range[i].length; j++) {
+                    const objectRangeTile = document.getElementById(String(parseInt(pObject.row+pObject.range[i][j]))+String(parseInt(pObject.column+pObject.range[i][j+1])));
+                    if(pObject == this) continue loop1;
+                    if(objectRangeTile == null) break loop3;
+                    if(objectRangeTile.firstElementChild != null) break loop3;
+                    if(pObject.color != this.color) {
+                        const thisTile = document.getElementById(String(this.row)+String(this.column));
+                        if(objectRangeTile == thisTile || objectRangeTile == tile) {
+                            thisTile.classList.add("game-current-selected");
+                        
+                            return true;
+                        } 
+                    }
                     j++;
                 }
             }
         }
         return false;
     }
-
    
 }
