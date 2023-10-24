@@ -1,6 +1,7 @@
 class TurnController {
     constructor () {
         this.turn = "white";
+        this.turnDisplay();
     }
     canChangeTurn(color) {
         if(color == this.turn) {
@@ -12,6 +13,7 @@ class TurnController {
         if(color == this.turn) {
             if(color == "white") this.turn = "black";
             else if(color == "black") this.turn = "white";
+            document.getElementById("game-TicTac-reset-button").value = this.turn+"'s turn";
         }
     }
 
@@ -25,6 +27,20 @@ class TurnController {
             pawn.customObject.row = row;
             pawn.customObject.column = col;
         });
+    }
+
+    turnDisplay() {
+        let div = document.createElement("div");
+        div.id = "game-TicTac-reset";
+
+        let turn = document.createElement("input");
+        turn.type = "button";
+        turn.id = "game-TicTac-reset-button";
+        turn.value = this.turn+"'s turn";
+
+        const gameScreen = document.getElementById("game-Chess-screen");
+        gameScreen.appendChild(div);
+        div.appendChild(turn);
     }
 
 }
