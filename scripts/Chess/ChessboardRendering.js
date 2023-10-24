@@ -153,5 +153,14 @@ class ChessboardRendering {
         new Checker(8,3,"white");
         new Checker(8,5,"white");
         new Checker(8,7,"white");
+        
+
+
+
+
+
+
+
+
     }
 }   

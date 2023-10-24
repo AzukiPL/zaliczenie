@@ -6,6 +6,7 @@ class ChekersParameters {
         this.tileID = String(this.row)+String(this.column);
         this.range = [];
         this.object = document.getElementById(this.tileID);
+        this.tileIterator = [];
     }
       // when this chess is selected, highlight tiles where it can move
       onCheckerSelect() {
@@ -18,11 +19,13 @@ class ChekersParameters {
     refreshTiles() {
         const tiles = document.getElementsByClassName("game-Chess-selected");
         for(let i=tiles.length-1; 0<=i; i--) {
+            tiles[i].dataset.enemies = " ";
             tiles[i].classList.remove("game-Chess-selected");
         }
         
         const redTiles = document.querySelectorAll(".game-current-selected");
         for(let i=0; i<redTiles.length; i++) {
+            redTiles[i].dataset.enemies = " ";
             redTiles[i].classList.remove("game-current-selected");
         }
     }
@@ -38,31 +41,36 @@ class ChekersParameters {
                     const tile = document.getElementById(String(parseInt(row+this.range[i][j]))+String(parseInt(column+this.range[i][j+1])));
                     const child = tile.firstElementChild;
                     if(child != null) {  
-                        if(!child.classList.contains(this.color))   
+                        if(!child.classList.contains(this.color) && !tile.classList.contains("game-current-selected"))   
                         {   
                             tile.classList.add("game-current-selected");
                             const tile2 = document.getElementById(String(parseInt(row+parseInt(this.range[i][j])*2))+String(parseInt(column+parseInt(this.range[i][j+1])*2)));
                             if(tile2 == null) tile.classList.remove("game-current-selected"); 
                             else if(tile2.firstElementChild == null) {
+                                this.tileIterator.push(tile.id);
+                                tile2.dataset.enemies = this.tileIterator;
                                 tile.classList.add("game-current-selected");
                                 tile2.classList.add("game-Chess-selected");
+                                
                                 this.#highlightMoveTiles(parseInt(row+parseInt(this.range[i][j])*2), parseInt(column+parseInt(this.range[i][j+1])*2), false);
-                                continue loop2;
+                                break loop2;
                             } 
                             else {
                                 tile.classList.remove("game-current-selected");
                             }
-                            continue loop2;
+                            break loop2;
                         }
                         else if(child.classList.contains(this.color)) {
-                            continue loop2;
+                            break loop2;
                         }
-                        else continue loop2;
+                        else break loop2;
                     }
                     else if(isFirst) tile.classList.add("game-Chess-selected");
                 }
                 j++;
             }
+            if(isFirst && i==1) this.tileIterator[-1] = this.tileIterator.pop();
+            else if(i==2) this.tileIterator[-1] = this.tileIterator.pop();
         }
     }
 }
