@@ -46,10 +46,10 @@ Maciej Wojtkiewicz
     and update score on the side banners of the screen.
 
 --TIC TAC TOE INCLUDE FILES--
-    <script lang="JavaScript" src="scripts/TicTacToe/ScoreController.js"></script>
-    <script lang="JavaScript" src="scripts/TicTacToe/InputController.js"></script>
-    <script lang="JavaScript" src="scripts/TicTacToe/TileRenderer.js"></script>
-    <script lang="JavaScript" src="scripts/TicTacToe/index.js"></script>
+-    scripts/TicTacToe/ScoreController.js
+-    scripts/TicTacToe/InputController.js
+-    scripts/TicTacToe/TileRenderer.js
+-    scripts/TicTacToe/index.js
 
 
 
@@ -71,17 +71,17 @@ Maciej Wojtkiewicz
 
 
 --CHESS INCLUDE FILES--
-    <script lang="JavaScript" src="scripts/Chess/TurnController.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/PawnsParameters.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/TileListener.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/King.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/Queen.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/Bishop.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/Knight.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/Rook.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/Pawn.js"></script>
-    <script lang="JavaScript" src="scripts/Chess/ChessboardRendering.js"></script>
-    <script lang="JavaScript" src="scripts/Chess//index.js"></script> 
+-    scripts/Chess/TurnController.js
+-    scripts/Chess/PawnsParameters.js
+-    scripts/Chess/TileListener.js
+-    scripts/Chess/King.js
+-    scripts/Chess/Queen.js
+-    scripts/Chess/Bishop.js
+-    scripts/Chess/Knight.js
+-    scripts/Chess/Rook.js
+-    scripts/Chess/Pawn.js
+-    scripts/Chess/ChessboardRendering.js
+-    scripts/Chess//index.js 
 
 --CHECKERS--
 - index.js creates instanceof ChessboardRendering, and call renderCheckers function
@@ -99,10 +99,14 @@ Maciej Wojtkiewicz
 - therefore these 3 classes contains methods for both, chess, and checkers.
 
 --CHECKERS INCLUDE FILES--
-    <script src="scripts/Chess/TurnController.js"></script>
-    <script src="scripts/Chess/ChessboardRendering.js"></script>
-    <script src="scripts/Chess/TileListener.js"></script>
-    <script src="scripts/Checkers/CheckersParameters.js"></script>
-    <script src="scripts/Checkers/Checker.js"></script>
-    <script src="scripts/Checkers/KingChecker.js"></script>
-    <script src="scripts/Checkers/index.js"></script>
+-    scripts/Chess/TurnController.js
+-    scripts/Chess/ChessboardRendering.js
+-    scripts/Chess/TileListener.js
+-    scripts/Checkers/CheckersParameters.js
+-    scripts/Checkers/Checker.js
+-    scripts/Checkers/KingChecker.js
+-    scripts/Checkers/index.js
+
+
+
+P.S. This website is sort of responsive, I did not use Media@ for it to being more responsive, which can be seen on buttons in menu, however the website keeps its layout regardless of screen width.
