@@ -64,6 +64,6 @@ class ScoreController {
                 console.log("Incorrect Player ID at checkWinner() parameter."); 
                 break;
         }
-        console.log("Player "+player+" wins!");
+        alert("Player "+player+" wins!");
     }
 }
