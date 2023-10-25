@@ -57,25 +57,6 @@ class TileListener {
                     }
                 }
                 iterator.dataset.enemies = null;
-                // for (const enemy of jump) {
-                //     const idRow = String(parseInt(enemy.id/10));
-                //     const idCol = String(parseInt(enemy.id%10));
-                //     if(enemy != null) {
-                //         // if(idRow < this.lastSelected.customObject.row && idRow > iterator.id/10) {
-                //         //     if(idCol > this.lastSelected.customObject.column && idCol < iterator.id%10)
-                //         //     {
-                //         //         console.log("within range");
-                //         //     }
-                //         //     else console.log("not range1");
-                //         // }
-                //         // else console.log("not range");
-                //         // console.log(iterator.dataset.enemies);
-
-
-                //         enemy.innerHTML = " ";
-                //     }
-                    
-                // }
                 this.refreshTiles();
                 this.lastSelected.customObject.row = parseInt(iterator.id / 10);
                 this.lastSelected.customObject.column = parseInt(iterator.id % 10);

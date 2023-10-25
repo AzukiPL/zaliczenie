@@ -1,5 +1,5 @@
 class TileListener {
-    static tileListen = new this;
+    // static tileListen = new this;
     static turnCtrl = new TurnController();
     constructor () {
         this.lastSelected = null;
