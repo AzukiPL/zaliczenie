@@ -1,3 +1,4 @@
+// literally copy paste of Pawn
 class Checker extends ChekersParameters {
     constructor (row,column,color) {
         super(row,column,color);
@@ -24,8 +25,7 @@ class Checker extends ChekersParameters {
 
     #addRange() {
         this.range = [[],[],[],[]];
-        if(this.color == "white")
-        {
+        if(this.color == "white") {
             // Top Right
             this.range[0][0] = -1;
             this.range[0][1] =  1;
@@ -34,8 +34,7 @@ class Checker extends ChekersParameters {
             this.range[1][0] = -1;
             this.range[1][1] = -1;
         }
-        else
-        {
+        else {
             // Bottom Right
             this.range[0][0] =  1;
             this.range[0][1] =  1;

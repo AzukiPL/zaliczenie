@@ -23,6 +23,7 @@ class InputController {
     }
     
     // Places player marking, changes color in this tile to player mark color, and adds class X to the document.element of ID == this.tileID
+    // then calls scoreControl.checkWinner to see if player won, parameter 1 or 2 = wheter its player 1 or player 2
     #putPlayerMarking() {
         if(this.scoreControl.isMatchWon) {
             return 0;

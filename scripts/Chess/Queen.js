@@ -23,10 +23,8 @@ class Queen extends PawnsParameters {
         destinationTile.appendChild(image);
     }
     
+    // first element of rangeRow (y axis) is connected to its corresponding rangeCol (x axis) which gives coordinates col / row || y / x
     #addRange() {
-        // first element of rangeRow (x axis) is connected to its corresponding rangeCol (y axis)
-        // straight line
-
         for(let i=0; i<8; i++) {
             this.range[i] = [];
             for(let j=0; j<16; j++) {

@@ -16,6 +16,9 @@ class ChekersParameters {
             this.#highlightMoveTiles(this.row,this.column, true);
         }, false);
     } 
+
+    // Refreshes tiles that have been prievously highlighted, this is quite common function i make and i feel like i should create special class for it
+    // but for now its copied paste within CheckersParameters / PawnsParameters and TileListener
     refreshTiles() {
         const tiles = document.getElementsByClassName("game-Chess-selected");
         for(let i=tiles.length-1; 0<=i; i--) {
@@ -32,6 +35,10 @@ class ChekersParameters {
 
 
     // highlights tiles where last selected pawn can move to
+    // if tile where pawn can move to is occupied by pawn, and this pawn is enemy
+    // checks if next tile is empty, if it is, assing to this tile where enemy pawn was found inside dataset.enemies
+    // and call this function again to check if multi jumps are possible.
+    // because this.tileIterator keeps data of prievously found enemies, each next tile contains old highlighted enemies data.
     #highlightMoveTiles(row, column, isFirst) {
         if(!TileListener.turnCtrl.canChangeTurn(this.color)) return;
         loop1: for(let i=0; i<this.range.length;i++) {
@@ -69,6 +76,9 @@ class ChekersParameters {
                 }
                 j++;
             }
+            // these pops for last element of tiel iterator are essential for tiles to store proper data regarding pawns they can remove if player moves there.
+            // its hard to explain so you can attempt changing these values and perform multi jump on checker to see what issue they solves. 
+            // especially on jumps with 2 or more enemy pawns.
             if(isFirst && i==1) this.tileIterator[-1] = this.tileIterator.pop();
             else if(i==2) this.tileIterator[-1] = this.tileIterator.pop();
         }

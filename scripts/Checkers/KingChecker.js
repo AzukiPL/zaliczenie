@@ -22,24 +22,8 @@ class KingChecker extends ChekersParameters {
         destinationTile.appendChild(image);
     }
 
+    // i had some issues when i did it with for loop, so for simplicity i went with this approach here. 
     #addRange() {
-        // for(let i=0; i<4; i++) {
-        //     this.range[i] = [];
-        //     for(let j=0; j<2; j++) {
-        //             // to the right top
-        //             if(i==0 && j%2 == 0)   this.range[i][j]      = -1;
-        //             else if(i==0 && j%2 != 0)   this.range[i][j] =  1;
-        //             // to the left top
-        //             else if(i==1 && j%2 == 0)   this.range[i][j] = -1;
-        //             else if(i==1 && j%2 != 0)   this.range[i][j] = -1;
-        //             // to the Bottom Right
-        //             else if(i==2 && j%2 == 0)   this.range[i][j] =  1;
-        //             else if(i==2 && j%2 != 0)   this.range[i][j] =  1;
-        //             // to the Bottom Left
-        //             else if(i==3 && j%2 == 0)   this.range[i][j] =  1;
-        //             else if(i==3 && j%2 != 0)   this.range[i][j] = -1;
-        //     }
-        // }
         this.range = [[],[],[],[]];
         // Top Right
         this.range[0][0] = -1;

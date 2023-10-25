@@ -23,6 +23,8 @@ class Pawn extends PawnsParameters {
         destinationTile.appendChild(image);
     }
 
+    // first element of rangeRow (y axis) is connected to its corresponding rangeCol (x axis) which gives coordinates col / row || y / x
+    // I was lazy to make it more readable so i leave it as every other pawn althought this one has simple movement.
     #addRange() {
         for(let i=0; i<1; i++) {
             this.range[i] = [];
@@ -48,6 +50,7 @@ class Pawn extends PawnsParameters {
     }
     // Highlights enemies if pawn can attack them
     // Highlighted tiles = pawn can move there / attack pawns on these tiles
+    // other pawns can attack every pawn on their line of range, but pawn can only diagnaly, while his move range is only forward.
     highlightIfPawn() {
         if(this.object.customObject instanceof Pawn) {
             let enemyTileR = document;

@@ -17,7 +17,7 @@ Maciej Wojtkiewicz
     myFunction() { // open here
 
     } // close here
-
+- all events are handled by scripts, without inline events as good practice.
 
 --CSS--
 - class and id naming that are used for style, begin with file name where they are located, and then category they are in. as example:
@@ -45,6 +45,14 @@ Maciej Wojtkiewicz
 - InputController inside marking function, calls ScoreController, that is responsible for checking if one of player has won.
     and update score on the side banners of the screen.
 
+--TIC TAC TOE INCLUDE FILES--
+    <script lang="JavaScript" src="scripts/TicTacToe/ScoreController.js"></script>
+    <script lang="JavaScript" src="scripts/TicTacToe/InputController.js"></script>
+    <script lang="JavaScript" src="scripts/TicTacToe/TileRenderer.js"></script>
+    <script lang="JavaScript" src="scripts/TicTacToe/index.js"></script>
+
+
+
 
 --CHESS--
 - index.js creates instanceof ChessboardRendering, and call render function.
@@ -62,6 +70,18 @@ Maciej Wojtkiewicz
 - TurnController simply checks whose turn it is, display it above game screen and prevent other player from making his move until its his turn.
 
 
+--CHESS INCLUDE FILES--
+    <script lang="JavaScript" src="scripts/Chess/TurnController.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/PawnsParameters.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/TileListener.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/King.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/Queen.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/Bishop.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/Knight.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/Rook.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/Pawn.js"></script>
+    <script lang="JavaScript" src="scripts/Chess/ChessboardRendering.js"></script>
+    <script lang="JavaScript" src="scripts/Chess//index.js"></script> 
 
 --CHECKERS--
 - index.js creates instanceof ChessboardRendering, and call renderCheckers function
@@ -78,3 +98,11 @@ Maciej Wojtkiewicz
 - Making inherits class files felt inefficient because then HTML file would have to include both, parent and child classes, which was pointless for changing single method inside class.
 - therefore these 3 classes contains methods for both, chess, and checkers.
 
+--CHECKERS INCLUDE FILES--
+    <script src="scripts/Chess/TurnController.js"></script>
+    <script src="scripts/Chess/ChessboardRendering.js"></script>
+    <script src="scripts/Chess/TileListener.js"></script>
+    <script src="scripts/Checkers/CheckersParameters.js"></script>
+    <script src="scripts/Checkers/Checker.js"></script>
+    <script src="scripts/Checkers/KingChecker.js"></script>
+    <script src="scripts/Checkers/index.js"></script>

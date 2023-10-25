@@ -9,8 +9,6 @@ class PawnsParameters {
         this.color = color;
         this.tileID = String(this.row)+String(this.column);
         this.range = [];
-        this.rangeRow = [];
-        this.rangeCol = [];
         this.object = document.getElementById(this.tileID);
 
     }

@@ -23,10 +23,9 @@ class Rook extends PawnsParameters {
         image.dataset.pawnData = "rookPawnB";
         destinationTile.appendChild(image);
     }
-        #addRange() {
-        // first element of rangeRow (x axis) is connected to its corresponding rangeCol (y axis)
-        // straight line
+    // first element of rangeRow (y axis) is connected to its corresponding rangeCol (x axis) which gives coordinates col / row || y / x
 
+    #addRange() {
         for(let i=0; i<4; i++) {
             this.range[i] = [];
             for(let j=0; j<16; j++) {
@@ -42,7 +41,7 @@ class Rook extends PawnsParameters {
                 // to the left
                 else if(i==2 && j%2 == 0)   this.range[i][j] =  0;
                 else if(i==2 && j%2 != 0)   this.range[i][j] = -j/2;
-                              
+                                
                 // to the right
                 else if(i==3 && j%2 == 0)   this.range[i][j] =  0;
                 else if(i==3 && j%2 != 0)   this.range[i][j] =  j/2+1;

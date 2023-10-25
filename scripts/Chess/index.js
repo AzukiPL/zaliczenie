@@ -4,6 +4,5 @@ function main() {
 
     const tileListener = new TileListener("chess");
     tileListener.addListeners();
-
 }
 main();

@@ -5,5 +5,4 @@ function main() {
     const tileListener = new TileListener("checkers");
     tileListener.addListeners();
 }
-
 main();

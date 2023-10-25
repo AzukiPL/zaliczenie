@@ -5,7 +5,7 @@ class ScoreController {
         this.isMatchWon = false;
     }
     // Checks whether someone won or not.
-    // Player 1 for x player 2 for o
+    // Player 1 for x, player 2 for o
     checkWinner(player) { 
         this.#checkTiles(1,2,3, player);
         this.#checkTiles(4,5,6, player);

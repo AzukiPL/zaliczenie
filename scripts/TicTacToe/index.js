@@ -4,5 +4,4 @@
     tileRendr.renderTiles();
     tileRendr.renderReset();
  }
-
  main();

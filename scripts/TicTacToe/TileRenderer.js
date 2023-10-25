@@ -3,6 +3,7 @@ class TileRenderer {
         this.inputCtrl = new InputController();
     }
 
+    // renders 9 tiles on the screen, and add event listener to it that checks for update, which is main logic of the game
     renderTiles() {
         const gameScreen = document.getElementById("game-TicTac-screen");
         for(let i=0; i<9; i++) {
@@ -16,6 +17,9 @@ class TileRenderer {
             gameScreen.appendChild(tile);
         }
     }
+
+    // this method renders reset button below game screen, so when player wins or match is draw, 
+    // players can press reset button to refresh game without refreshing scores of each player.
     renderReset() {
         let div = document.createElement("div");
         div.id = "game-TicTac-reset";

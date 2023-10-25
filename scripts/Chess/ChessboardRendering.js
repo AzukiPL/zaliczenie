@@ -12,12 +12,10 @@ class ChessboardRendering {
 
 
     }
+    
     // creates chessboard tiles from left to right, and give its correct class
     // give each tile its own id based on their position in row / column || x axis / y axis
     // on the end of the row switch color again so next row begins with same color as prievous ended
-    
-    
-    
     renderChessboard() {
         const gameScreen = document.getElementById("game-Chess-screen");
         let isWhite = true;
@@ -126,6 +124,8 @@ class ChessboardRendering {
     }
 
     // ------------------------------------------ CHECKERS RENDERERS --------------------------------
+    
+    // this is if game chooses to render checkers instead chess, note it requires to include checker scripts.
     renderCheckers() {
         this.renderChessboard();
         new Checker(1,2,"black");

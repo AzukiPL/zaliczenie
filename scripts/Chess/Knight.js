@@ -24,6 +24,7 @@ class Knight extends PawnsParameters {
         destinationTile.appendChild(image);
     }
 
+    // first element of rangeRow (y axis) is connected to its corresponding rangeCol (x axis) which gives coordinates col / row || y / x
     #addRange() {
         for(let i=0; i<8; i++) {
             this.range[i] = [];
